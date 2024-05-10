@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday</title>
+</head>
+<style>
+body{
+  background-color: #fcf5e2;
+}
+
+.Botan{
+  position: absolute;
+  left: 1325px;
+  top: 200px;
+}
+
+.Botan {
+  border: none;
+  outline: none;
+  background-color: #6c5ce7;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 5px;
+  transition: all ease 0.1s;
+  box-shadow: 0px 5px 0px 0px #a29bfe;
+}
+
+.Botan:active {
+  transform: translateY(5px);
+  box-shadow: 0px 0px 0px 0px #a29bfe;
+}
+
+.image-0{
+  position: absolute;
+  height: 729px;
+  left:0px;
+  top: 0px;
+  z-index: -10;
+} 
+
+.image-1{
+  position: absolute;
+  height: 250px;
+  left:600px;
+  top: 200px;
+  mix-blend-mode: darken;
+} 
+
+.image-2{
+  position: absolute;
+  height: 150px;
+  left:1250px;
+  top: 55px;
+  mix-blend-mode: darken;
+
+}
+
+.image-3{
+  position: absolute;
+  height: 100px;
+  left:670px;
+  top: 430px;
+  mix-blend-mode: darken;
+} 
+
+.image-4{
+  position: absolute;
+  height: 250px;
+  right:30px;
+  bottom: 30px;
+  mix-blend-mode: darken;
+} 
+
+.image-5{
+  position: absolute;
+  height: 125px;
+  left:20px;
+  top: 250px;
+}
+
+.image-6{
+  position: absolute;
+  height: 100px;
+  right:160px;
+  bottom: 250px;
+  mix-blend-mode: darken;
+} 
+
+
+.arrow{
+  position: absolute;
+  height: 100px;
+  left:570px;
+  top: 250px;
+  mix-blend-mode: darken;
+
+}
+
+
+body {
+  margin: 0;
+}
+
+#balloon-container {
+  height: 100vh;
+  padding: 1em;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  transition: opacity 500ms;
+}
+
+
+.balloon {
+  height: 125px;
+  width: 105px;
+  border-radius: 75% 75% 70% 70%;
+  position: relative;
+}
+
+.balloon:before {
+  content: "";
+  height: 75px;
+  width: 1px;
+  padding: 1px;
+  background-color: #FDFD96;
+  display: block;
+  position: absolute;
+  top: 125px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.balloon:after {
+    content: "▲";
+    text-align: center;
+    display: block;
+    position: absolute;
+    color: inherit;
+    top: 120px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@keyframes float {
+  from {transform: translateY(100vh);
+  opacity: 1;}
+  to {transform: translateY(-300vh);
+  opacity: 0;}
+}
+
+.text{
+  position: absolute;
+  height: 100px;
+  left:550px;
+  top: 220px;
+  mix-blend-mode: darken;
+}
+
+.card {
+  width: 200px;
+  height: 100px;
+  background-image: url("birthday-text");
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 650px;
+  top: 10px;
+}
+
+.card h1 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.link-button {
+  background-color: #ffcac3; 
+  color: #000000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 325px;
+  right: 20px;
+}
+
+.arrow-right {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.arrow-right:hover {
+  border-color: #000000;
+}
+
+</style>
+<body>
+
+
+  <a href="#" class="link-button" id="boutan">
+    <i class="arrow-right"></i>
+  </a>
+
+
+  <div id="card" class="card">
+    <img src="birthday-text.png">
+  </div>
+
+  <div id="balloon-container">
+  </div>
+
+<img src="Ellipse.png" class="image-0">
+<img src="ellipse-text.png" class="image-5">
+<img src="hk & hornet.jpg" class="image-1">
+<img src="hk and hornet standin.jpg" class="image-2">
+<img src="cakee.png" class="image-3">
+<img src="arrow.png" class="arrow">
+<img src="flower-hk.jpg" class="image-4">
+<img src="stupid-text.png" class="image-6">
+<p class="text">
+  (nigha im too tired Fr)
+</p>
+<button class = "confetti-button, Botan" onclick="confetti();">What's this</button>
+<script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js">
+
+
+button.addEventListener('click', () => {
+  // Your confetti code here
+
+const count = 200,
+defaults = {
+    origin: { y: 0.7 },
+};
+
+function randomInRange(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function fire(particleRatio, opts) {
+confetti(
+    Object.assign({}, defaults, opts, {
+      particleCount: Math.floor(count * particleRatio),
+      angle: randomInRange(55, 125),
+      spread: randomInRange(50, 70),
+      particleCount: randomInRange(50, 100),
+      origin: { y: 0.6 },
+    })
+);
+}
+
+
+fire(0.25, {
+spread: 26,
+startVelocity: 55,
+});
+
+fire(0.2, {
+spread: 60,
+});
+
+fire(0.35, {
+spread: 100,
+decay: 0.91,
+scalar: 0.8,
+});
+
+fire(0.1, {
+spread: 120,
+startVelocity: 25,
+decay: 0.92,
+scalar: 1.2,
+});
+
+fire(0.1, {
+spread: 120,
+startVelocity: 45,
+});
+});
+
+    
+fire(0.75, {
+spread: 26,
+startVelocity: 55,
+});
+
+fire(0.2, {
+spread: 60,
+});
+
+fire(0.35, {
+spread: 100,
+decay: 0.91,
+scalar: 0.8,
+});
+
+fire(0.1, {
+spread: 120,
+startVelocity: 25,
+decay: 0.92,
+scalar: 1.2,
+});
+
+fire(0.1, {
+spread: 120,
+startVelocity: 45,
+});
+
+</script>
+<script>
+let interval;
+
+function startConfetti() {
+  const duration = 6000, // 6 seconds
+    animationEnd = Date.now() + duration,
+    defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+  function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  interval = setInterval(function() {
+    const timeLeft = animationEnd - Date.now();
+
+    if (timeLeft <= 0) {
+      clearInterval(interval);
+    } else {
+      const particleCount = 50 * (timeLeft / duration);
+
+
+      confetti(
+        Object.assign({}, defaults, {
+          particleCount,
+          origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+        })
+      );
+      confetti(
+        Object.assign({}, defaults, {
+          particleCount,
+          origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+        })
+      );
+    }
+  }, 250);
+}
+
+
+startConfetti(); 
+</script>
+
+<script>
+  const balloonContainer = document.getElementById("balloon-container");
+
+function random(num) {
+  return Math.floor(Math.random() * num);
+}
+
+function getRandomStyles() {
+  var r = random(255);
+  var g = random(255);
+  var b = random(255);
+  var mt = random(200);
+  var ml = random(50);
+  var dur = random(5) + 5;
+  return `
+  background-color: rgba(${r},${g},${b},0.7);
+  color: rgba(${r},${g},${b},0.7); 
+  box-shadow: inset -7px -3px 10px rgba(${r - 10},${g - 10},${b - 10},0.7);
+  margin: ${mt}px 0 0 ${ml}px;
+  animation: float ${dur}s ease-in infinite
+  `;
+}
+
+function createBalloons(num) {
+  for (var i = num; i > 0; i--) {
+    var balloon = document.createElement("div");
+    balloon.className = "balloon";
+    balloon.style.cssText = getRandomStyles();
+    balloonContainer.append(balloon);
+  }
+}
+
+function removeBalloons() {
+  balloonContainer.style.opacity = 0;
+  setTimeout(() => {
+    balloonContainer.remove()
+  }, 500)
+}
+
+window.addEventListener("load", () => {
+  createBalloons(30)
+});
+
+window.addEventListener("click", () => {
+  removeBalloons();
+});
+
+</script>
+<script>
+  document.getElementById("boutan").addEventListener("click", function() {
+window.location.href = "do you want to go out(3rd page).html";
+});
+</script>
+</body>
+</html>
+
+<!--Easter egg #5
+This one is the hardest, all I want to say for it, Look through the code carefully.
+-->
